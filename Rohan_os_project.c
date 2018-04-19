@@ -11,6 +11,7 @@ struct process
     int ti;
     int turnaround;
     float ratio;
+    int avg;
 }p1[10];
 int no,k;
 int checkp1(int s)
@@ -109,6 +110,15 @@ int main()
 
   printf("\n\n");
  }
+ float avg,avg1,sum=0,sum1=0;
+for(i=1;i<=n;i++)
+{
+	sum=sum+p1[i].turnaround;
+	sum1=sum1+p1[i].wait;
+}
+avg=sum/n;
+avg1=sum1/n;
+printf("\naverage turnaround time is %f",avg);
+printf("\naverage waiting time is %f",avg1);
  getch();
 }
-
